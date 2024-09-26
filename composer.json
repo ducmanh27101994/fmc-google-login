@@ -10,5 +10,10 @@
         "php": ">=7.3",
         "laravel/socialite": "^5.16",
         "firebase/php-jwt": "^6.10"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
     }
 }
