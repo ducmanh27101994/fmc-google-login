@@ -48,6 +48,7 @@ class AuthController extends Controller
                 'email' => $userInfoGoogle['email'],
                 'password' => Hash::make(Faker::create()->password()),
                 'google_id' => $userInfoGoogle['google_id'],
+                'picture' => $userInfoGoogle['picture']
             ]);
         }
 
