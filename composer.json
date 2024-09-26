@@ -1,5 +1,5 @@
 {
-    "name": "fmc-example/fmc-google-login",
+    "name": "fmc-example/google-login",
     "description": "Google Login API",
     "autoload": {
         "psr-4": {
@@ -8,12 +8,6 @@
     },
     "require": {
         "php": ">=7.3",
-        "laravel/socialite": "^5.16",
-        "firebase/php-jwt": "^6.10"
-    },
-    "extra": {
-        "laravel": {
-            "dont-discover": []
-        }
+        "google/apiclient": "^2.17"
     }
 }

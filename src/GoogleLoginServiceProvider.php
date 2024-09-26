@@ -15,7 +15,7 @@ class GoogleLoginServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('FmcExample\GoogleLogin\Http\Controllers\GoogleLoginController');
+        $this->app->make('FmcExample\GoogleLogin\Http\Controllers\AuthController');
 
     }
     public function boot()

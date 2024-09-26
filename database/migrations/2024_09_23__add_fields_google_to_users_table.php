@@ -12,6 +12,7 @@ class AddFieldsGoogleToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->string('google_id')->nullable();
+            $table->string('picture')->nullable();
         });
     }
 
@@ -20,6 +21,7 @@ class AddFieldsGoogleToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->dropColumn('google_id');
+            $table->string('picture')->nullable();
         });
     }
 }

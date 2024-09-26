@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use FmcExample\GoogleLogin\Http\Controllers\GoogleLoginController;
+use FmcExample\GoogleLogin\Http\Controllers\AuthController;
 
-Route::middleware(['web'])->group(function () {
-    Route::get('auth/google', [GoogleLoginController::class, 'redirectToGoogle']);
-    Route::get('auth/google/callback', [GoogleLoginController::class, 'googleCallback']);
-});
+Route::post('handleGoogleLogin', [AuthController::class, 'handleGoogleLogin']);
+
