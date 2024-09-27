@@ -16,11 +16,17 @@ class GoogleLoginServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->make('FmcExample\GoogleLogin\Http\Controllers\AuthController');
+        $this->mergeConfigFrom(
+            __DIR__.'/config/config.php', 'config'
+        );
 
     }
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__ . '/routes/api.php');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->publishes([
+            __DIR__.'/config/config.php' => config_path('config.php'),
+        ]);
     }
 }

@@ -12,7 +12,7 @@ class GoogleAccessTokenValidator
 
     public function __construct()
     {
-        $this->client = new Google_Client(['client_id' => env('GOOGLE_CLIENT_ID')]);
+        $this->client = new Google_Client(['client_id' => config('config.client_id')]);
     }
 
     public function validateAndGetUserInfo($accessToken)
