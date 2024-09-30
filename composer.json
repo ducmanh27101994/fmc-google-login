@@ -8,6 +8,7 @@
     },
     "require": {
         "php": ">=7.3",
-        "google/apiclient": "^2.17"
+        "google/apiclient": "^2.17",
+        "laravel/sanctum": "^2.15"
     }
 }
