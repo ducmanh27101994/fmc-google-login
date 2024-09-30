@@ -43,7 +43,7 @@ class AuthController extends Controller
         $user = User::where('email', $userInfoGoogle['email'])->first();
 
         if (!$user) {
-            $user = User::create([
+            User::create([
                 'name' => $userInfoGoogle['name'],
                 'email' => $userInfoGoogle['email'],
                 'password' => Hash::make(Faker::create()->password()),
@@ -52,25 +52,9 @@ class AuthController extends Controller
             ]);
         }
 
-        try {
-            $token = $user->createToken('google_token')->plainTextToken;
-        } catch (Exception $exception) {
-            $error = $exception->getMessage();
-            return response()->json([
-                'message' => $error,
-                'status' => 400,
-            ]);
-        }
-
         return response()->json([
             'message' => "Đăng nhập thành công",
             'status' => 200,
-            'token' => $token
         ]);
-    }
-
-    function example()
-    {
-        echo 'success';
     }
 }
